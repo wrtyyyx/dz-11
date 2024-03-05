@@ -1,5 +1,13 @@
 @import url(/css/reset.css);
 
+@font-face {
+    font-family: 'Nunito Sans 10pt';
+    src: url('NunitoSans10pt-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 .container{
     
     width: 1200px;
@@ -138,9 +146,9 @@ a{
 	top: 0;
 	bottom: 0;
 	width: 102px;
-	background: yellow;
+	background: #EFEBFF;
 	transition: width 1s linear;
-	padding: 84px 27px 0;
+	padding: 39px 28px 0;
 	overflow: hidden;
 }
 
@@ -152,7 +160,10 @@ a{
 .aside:hover {
 	width: 300px;
 }
-
+.aside:hover + .aside-text{
+    display: block;
+    opacity: 1;
+}
 .aside:hover + .wrapper {
 	padding-left: 300px;
 }
@@ -161,23 +172,49 @@ a{
 	display: flex;
 	align-items: center;
 	gap: 20px;
+    text-decoration: none;   
 }
+
+.aside-text{
+    color: #1A1A1A; 
+    font-family: 'Nunito Sans 10pt';
+    letter-spacing: -0.16px;
+    transition: opacity 0.5s ease-in-out;
+}
+
 .aside-link:hover .aside-icon {
 	transform: rotate(-45deg) scale(1.4);
+    
 }
 
 .aside-link .aside-link-border {
-	border: 2px solid red;
+	border: 2px solid rgb(0, 0, 0);
 	line-height: 10px;
 	padding: 2px;
+    border-radius: 5px;
 	transform: rotate(45deg);
 	overflow: hidden;
 	flex-shrink: 0;
 }
 .aside-icon {
-	width: 30px;
-	height: 30px;
-	fill: #000;
+	width: 24px;
+	height: 24px;
 	transform: rotate(-45deg);
 	transition: transform .5s linear;
+}
+
+.icon-list{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h2{
+    margin-bottom: 73px;
+}
+
+h2 .aside-text{
+    font-size: 26px;
+    font-weight: 600;
+    
 }
